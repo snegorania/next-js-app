@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0.0-ubi8
+    restart: unless-stopped
+    container_name: meetupsDB
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongouser
+      - MONGO_INITDB_ROOT_PASSWORD=mongosecretepassword
+      - MONGO_INITDB_DATABASE=meetups
+    ports:
+      - 27017:27017
